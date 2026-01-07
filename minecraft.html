@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playing.uz | Minecraft</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div>
+        <div class="logo">Playing.uz</div>
+        <div class="tagline">Minecraft quick connect hub.</div>
+      </div>
+      <div class="tagline"><button class="btn secondary" type="button">Log in</button></div>
+    </div>
+    <nav aria-label="Game pages">
+      <a href="main.html">Home</a>
+      <a href="cs2.html">CS2</a>
+      <a href="minecraft.html">Minecraft</a>
+      <a href="cs16.html">CS 1.6</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card fade-up">
+      <span>PLAY</span>
+      <div>
+        <strong>Quick entry</strong>
+        <div class="tagline">Copy IPs or launch Minecraft.</div>
+      </div>
+    </div>
+    <div class="hero-card fade-up delay-1">
+      <span>LIVE</span>
+      <div>
+        <strong>Player stats</strong>
+        <div class="tagline">Online counts and capacity.</div>
+      </div>
+    </div>
+    <div class="hero-card fade-up delay-2">
+      <span>MODE</span>
+      <div>
+        <strong>Mode tags</strong>
+        <div class="tagline">Survival, creative, mini-games.</div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="minecraft">
+      <div class="section-head">
+        <h2>Minecraft Servers</h2>
+        <p>Survival, creative, and mini-games. Grab the IP to play.</p>
+      </div>
+      <div class="cards">
+        <article class="card fade-up">
+          <h3>Skyblock Nexus</h3>
+          <div class="pill">Mode: Skyblock</div>
+          <div class="meta">
+            <div>Players: <strong>42</strong> / 80</div>
+            <div>Connect: <code>play.playing.uz:25565</code></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="minecraft://?addExternalServer=Skyblock%20Nexus|play.playing.uz:25565">Connect</a>
+            <button class="btn secondary copy-btn" data-copy="play.playing.uz:25565">Copy IP</button>
+            <span class="copied">Copied!</span>
+          </div>
+        </article>
+        <article class="card fade-up delay-1">
+          <h3>Creative Forge</h3>
+          <div class="pill">Mode: Creative</div>
+          <div class="meta">
+            <div>Players: <strong>16</strong> / 40</div>
+            <div>Connect: <code>creative.playing.uz:25566</code></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="minecraft://?addExternalServer=Creative%20Forge|creative.playing.uz:25566">Connect</a>
+            <button class="btn secondary copy-btn" data-copy="creative.playing.uz:25566">Copy IP</button>
+            <span class="copied">Copied!</span>
+          </div>
+        </article>
+        <article class="card fade-up delay-2">
+          <h3>Mini Arena</h3>
+          <div class="pill">Mode: Mini-games</div>
+          <div class="meta">
+            <div>Players: <strong>31</strong> / 60</div>
+            <div>Connect: <code>arena.playing.uz:25567</code></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="minecraft://?addExternalServer=Mini%20Arena|arena.playing.uz:25567">Connect</a>
+            <button class="btn secondary copy-btn" data-copy="arena.playing.uz:25567">Copy IP</button>
+            <span class="copied">Copied!</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll(".copy-btn");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const value = btn.dataset.copy;
+        const status = btn.parentElement.querySelector(".copied");
+
+        try {
+          await navigator.clipboard.writeText(value);
+        } catch (err) {
+          const temp = document.createElement("textarea");
+          temp.value = value;
+          document.body.appendChild(temp);
+          temp.select();
+          document.execCommand("copy");
+          document.body.removeChild(temp);
+        }
+
+        if (status) {
+          status.classList.add("show");
+          clearTimeout(status.dataset.timerId);
+          status.dataset.timerId = setTimeout(() => {
+            status.classList.remove("show");
+          }, 1200);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+

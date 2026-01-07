@@ -1,0 +1,171 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playing.uz | CS2</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div>
+        <div class="logo">Playing.uz</div>
+        <div class="tagline">CS2 quick connect hub.</div>
+      </div>
+      <div class="tagline"><button class="btn secondary" type="button">Log in</button></div>
+    </div>
+    <nav aria-label="Game pages">
+      <a href="main.html">Home</a>
+      <a href="cs2.html">CS2</a>
+      <a href="minecraft.html">Minecraft</a>
+      <a href="cs16.html">CS 1.6</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card fade-up">
+      <span>CS2</span>
+      <div>
+        <strong>Competitive ready</strong>
+        <div class="tagline">Steam connect links included.</div>
+      </div>
+    </div>
+    <div class="hero-card fade-up delay-1">
+      <span>LIVE</span>
+      <div>
+        <strong>Player stats</strong>
+        <div class="tagline">Online counts and capacity.</div>
+      </div>
+    </div>
+    <div class="hero-card fade-up delay-2">
+      <span>PRO</span>
+      <div>
+        <strong>Mode tags</strong>
+        <div class="tagline">Deathmatch, aim, competitive.</div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="cs2">
+      <div class="section-head">
+        <h2>CS2 Servers</h2>
+        <p>Competitive, casual, and aim practice. Join via Steam connect.</p>
+      </div>
+      <div class="cards">
+        <article class="card fade-up">
+          <h3>Mirage Prime</h3>
+          <div class="pill">Mode: Competitive 5v5</div>
+          <div class="meta">
+            <div>Players: <strong>18</strong> / 20</div>
+            <div>Connect: <code>steam://connect/185.22.64.10:27015</code></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="steam://connect/185.22.64.10:27015">Connect</a>
+            <button class="btn secondary copy-btn" data-copy="185.22.64.10:27015">Copy IP</button>
+            <span class="copied">Copied!</span>
+          </div>
+        </article>
+        <article class="card fade-up delay-1">
+          <h3>Dust2 Rush</h3>
+          <div class="pill">Mode: Deathmatch</div>
+          <div class="meta">
+            <div>Players: <strong>22</strong> / 32</div>
+            <div>Connect: <code>steam://connect/185.22.64.11:27016</code></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="steam://connect/185.22.64.11:27016">Connect</a>
+            <button class="btn secondary copy-btn" data-copy="185.22.64.11:27016">Copy IP</button>
+            <span class="copied">Copied!</span>
+          </div>
+        </article>
+        <article class="card fade-up delay-2">
+          <h3>Aim Lab</h3>
+          <div class="pill">Mode: Aim / 1v1</div>
+          <div class="meta">
+            <div>Players: <strong>9</strong> / 14</div>
+            <div>Connect: <code>steam://connect/185.22.64.12:27017</code></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="steam://connect/185.22.64.12:27017">Connect</a>
+            <button class="btn secondary copy-btn" data-copy="185.22.64.12:27017">Copy IP</button>
+            <span class="copied">Copied!</span>
+          </div>
+        </article>
+                <article class="card fade-up delay-3">
+          <h3>Aim Lab</h3>
+          <div class="pill">Mode: Aim / 1v1</div>
+          <div class="meta">
+            <div>Players: <strong>9</strong> / 14</div>
+            <div>Connect: <code>steam://connect/185.22.64.12:27017</code></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="steam://connect/185.22.64.12:27017">Connect</a>
+            <button class="btn secondary copy-btn" data-copy="185.22.64.12:27017">Copy IP</button>
+            <span class="copied">Copied!</span>
+          </div>
+        </article>
+                <article class="card fade-up delay-4">
+          <h3>Aim Lab</h3>
+          <div class="pill">Mode: Aim / 1v1</div>
+          <div class="meta">
+            <div>Players: <strong>9</strong> / 14</div>
+            <div>Connect: <code>steam://connect/185.22.64.12:27017</code></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="steam://connect/185.22.64.12:27017">Connect</a>
+            <button class="btn secondary copy-btn" data-copy="185.22.64.12:27017">Copy IP</button>
+            <span class="copied">Copied!</span>
+          </div>
+        </article>
+                <article class="card fade-up delay-5">
+          <h3>Aim Lab</h3>
+          <div class="pill">Mode: Aim / 1v1</div>
+          <div class="meta">
+            <div>Players: <strong>9</strong> / 14</div>
+            <div>Connect: <code>steam://connect/185.22.64.12:27017</code></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="steam://connect/185.22.64.12:27017">Connect</a>
+            <button class="btn secondary copy-btn" data-copy="185.22.64.12:27017">Copy IP</button>
+            <span class="copied">Copied!</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll(".copy-btn");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const value = btn.dataset.copy;
+        const status = btn.parentElement.querySelector(".copied");
+
+        try {
+          await navigator.clipboard.writeText(value);
+        } catch (err) {
+          const temp = document.createElement("textarea");
+          temp.value = value;
+          document.body.appendChild(temp);
+          temp.select();
+          document.execCommand("copy");
+          document.body.removeChild(temp);
+        }
+
+        if (status) {
+          status.classList.add("show");
+          clearTimeout(status.dataset.timerId);
+          status.dataset.timerId = setTimeout(() => {
+            status.classList.remove("show");
+          }, 1200);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+

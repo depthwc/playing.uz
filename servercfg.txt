@@ -1,0 +1,11 @@
+hostname "Playing.uz"
+sv_password ""
+sv_cheats 0
+mp_autoteambalance 1
+mp_limitteams 1
+mp_maxrounds 30
+mp_freezetime 10
+mp_roundtime 1.92
+sv_lan 0
+rcon_password "salom2114!"
+sv_setsteamaccount DA4BFD12072FC6F525C720E185646EA3
